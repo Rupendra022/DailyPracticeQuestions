@@ -1,0 +1,18 @@
+1. Check string is palindrome or not (Ignore Case sensitivity ) 
+class Solution {
+    public static boolean isPal(String s , int l , int r){
+        if(l >= r){
+            return true; 
+        }
+        if(Character.toUpperCase(s.charAt(l)) != Character.toUpperCase(s.charAt(r))){
+            return false; 
+        }
+        return isPal(s, l + 1, r - 1);  // ← You need to return this
+    }
+
+    public static boolean isPalindrome(String s) {
+        // RADHE RADHE 
+        return isPal(s, 0, s.length() - 1);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
