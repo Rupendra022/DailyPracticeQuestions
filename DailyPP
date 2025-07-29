@@ -15,4 +15,41 @@ class Solution {
         return isPal(s, 0, s.length() - 1);
     }
 }
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+GFG POD 29 JULY 2025 ASCII RANGE SUM >- 
+
+class Solution {
+    public ArrayList<Integer> asciirange(String s) {
+        // code here
+        
+        ArrayList<Integer> ans = new ArrayList<>();
+        
+        HashMap<Character,Integer> first = new HashMap<>();
+        HashMap<Character,Integer> last = new HashMap<>();
+        
+        for(int i = 0 ; i<s.length() ;i++){
+                first.putIfAbsent(s.charAt(i),i);
+                last.put(s.charAt(i),i);
+            
+        }
+        
+        
+        for(Character ele : first.keySet()){
+            int st = first.get(ele);
+            int end = last.get(ele);
+            int sum = 0 ; 
+            if(st==end) continue ;
+            for(int k = st+1 ; k<end ; k++){
+                sum += (int) s.charAt(k);
+            }
+            if(sum>0){
+                ans.add(sum);
+            }
+        }
+       
+        return ans ;
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
