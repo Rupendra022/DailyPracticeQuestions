@@ -53,3 +53,28 @@ class Solution {
 }
 
 ------------------------------------------------------------------------------------------------------------------------------------------------
+GFG POD 30 JULY 2025 Count subarrays with sum K 
+class Solution {
+    public int cntSubarrays(int[] arr, int k) {
+        // code here
+        // RADHE RADHE 
+        int count = 0 ; 
+        int sum = 0 ; 
+        HashMap<Integer,Integer> map = new HashMap<>();
+        map.put(0,1);
+        
+        for(int ele : arr){
+            sum += ele ; 
+            int rem = sum - k ; 
+            if(map.containsKey(rem)){
+                count += map.get(rem);
+            }
+            
+            map.put(sum,map.getOrDefault(sum,0)+1);
+        }
+       
+       return count ;
+    }
+}
+
+------------------------------------------------------------------------------------------------------------------------------------------------
