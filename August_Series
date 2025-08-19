@@ -198,3 +198,24 @@ class Solution {
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------
+8. 2348 LEETCODE POTD 19th AUGUST >- Number of Zero Filled Subarrays >- 
+class Solution {
+    public long zeroFilledSubarray(int[] nums) {
+
+        long count = 0;
+        long current = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                current++;
+            } else {
+                count += (current * (current + 1) / 2);
+                current = 0;
+            }
+        }
+        if (current != 0) {
+            count += (current * (current + 1) / 2);
+        }
+        return count;
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
