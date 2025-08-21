@@ -219,3 +219,22 @@ class Solution {
     }
 }
 -----------------------------------------------------------------------------------------------------------------------------------------------
+9. Median of a row wise sorted matrix >- GFG POTD 22nd August 
+class Solution {
+    public int median(int[][] mat) {
+        // RADHE RADHE 
+        // code here
+        
+        ArrayList<Integer> lst = new ArrayList<>();
+        
+        for(int i =0 ; i<mat.length ; i++){
+            for(int j = 0 ; j<mat[0].length ; j++){
+                lst.add(mat[i][j]);
+            }
+        }
+        Collections.sort(lst);
+        return lst.get(lst.size()/2);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
