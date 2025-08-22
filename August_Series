@@ -238,3 +238,26 @@ class Solution {
 }
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
+10. LEETCODE POTD 22ND AUGUST >- Find minimum reactangle to cover all ones 
+class Solution {
+    public int minimumArea(int[][] grid) {
+
+        int hmin = Integer.MAX_VALUE;
+        int vmin = Integer.MAX_VALUE;
+        int hmax = Integer.MIN_VALUE;
+        int vmax = Integer.MIN_VALUE;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    hmin = Math.min(hmin, i);
+                    vmin = Math.min(vmin, j);
+                    hmax = Math.max(hmax, i);
+                    vmax = Math.max(vmax, j);
+                }
+            }
+        }
+
+        return (hmax - hmin + 1) * (vmax - vmin + 1);
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
