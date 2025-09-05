@@ -1,0 +1,23 @@
+class Solution {
+    public int lengthOfLoop(Node head) {
+        // RADHE RADHE 
+        // code here
+        
+        Node slow = head ; 
+        Node fast = head ; 
+        int len = 1 ; 
+        while(fast!=null && fast.next!=null){
+            slow = slow.next ; 
+            fast = fast.next.next ; 
+            if(slow==fast){
+                Node a = slow.next ; 
+                while(slow!=a){
+                    a = a.next ; 
+                    len++ ; 
+                }
+                return len ; 
+            }
+        }
+        return 0 ;
+    }
+}
