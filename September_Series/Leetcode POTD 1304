@@ -1,0 +1,22 @@
+class Solution {
+    public int[] sumZero(int n) {
+
+        int[] ans = new int[n];
+        int st = -(n / 2);
+        if (n % 2 == 1) {
+            for (int i = 0; i < n; i++) {
+                ans[i] = st;
+                st++;
+            }
+        } else {
+            for (int i = 0; i < n; i++) {
+                if (st == 0)
+                    st = st + 1;
+                ans[i] = st;
+                st++;
+            }
+        }
+
+        return ans;
+    }
+}
