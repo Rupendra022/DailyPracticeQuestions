@@ -1,0 +1,24 @@
+class Solution {
+    public int maxConsecutiveAnswers(String answerKey, int k) {
+        int s=0;
+        int l=0;
+        int t =0, f=0;
+
+        for(int e=0;e<answerKey.length();e++){
+            char c = answerKey.charAt(e);
+            if(c=='T')
+                t++;
+            else
+                f++;
+
+            while(Math.min(t,f)>k){
+                char ch = answerKey.charAt(s);
+                if(ch=='T') t--;
+                else f--;
+                s++;
+                }
+                l=Math.max(l,e-s+1);
+        }
+        return l;
+    }
+}
