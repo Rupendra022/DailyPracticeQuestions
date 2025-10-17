@@ -1,0 +1,20 @@
+class Solution {
+    // RADHE RADHE 
+    public void helper(Node root ,ArrayList<Integer> res ){
+        if(root==null) return ; 
+        
+        helper(root.left,res);
+        res.add(root.data);
+        helper(root.right,res);
+    }
+    public int findMedian(Node root) {
+        // Code here
+        
+        ArrayList<Integer> res = new ArrayList<>();
+        
+        helper(root,res);
+        if(res.size()%2==1) return res.get((res.size()+1)/2-1);
+        
+        return res.get(res.size()/2-1);
+    }
+}
